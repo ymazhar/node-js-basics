@@ -1,0 +1,21 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "BASICS. NODEJS FUNDAMENTAL THEORY",
+  "main": "index.js",
+  "scripts": {
+    "task1": "nodemon ./task1.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymazhar/node-js-basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ymazhar/node-js-basics/issues"
+  },
+  "homepage": "https://github.com/ymazhar/node-js-basics#readme"
+}
