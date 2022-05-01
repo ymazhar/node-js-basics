@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "BASICS. NODEJS FUNDAMENTAL THEORY",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "task1": "nodemon ./task1.js",
     "task2": "nodemon ./task2.js",
