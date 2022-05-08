@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 rl.on('line', function(line ){
     const reverseLine = line.split('').reverse().join('')
 
-    console.log(reverseLine);
+    rl.output.write(reverseLine)
 })
 
 
