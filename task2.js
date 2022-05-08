@@ -12,6 +12,12 @@ const handleError = (error) => {
     console.error(error.message)
 }
 
+const lowercaseKeys = obj =>
+    Object.keys(obj).reduce((acc, key) => {
+        acc[key.toLowerCase()] = obj[key];
+        return acc;
+    }, {});
+
 readStream
     .on('error', (error) => handleError(error))
     .pipe(csv({
@@ -21,8 +27,14 @@ readStream
         },
         checkType: true
     }))
+    .on('error', (error) => handleError(error))
     .subscribe((json) => {
-        console.log(json);
+        for(const [key] of Object.entries(json)){
+            const oldKey = key
+            const newKey = oldKey.toLowerCase()
+            json[newKey] = json[oldKey]
+            delete json[oldKey]
+        }
     })
     .pipe(writeStream)
     .on('error', (error) => handleError(error))
