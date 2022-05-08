@@ -7,9 +7,10 @@ const readStream = fs.createReadStream(csvFilePath)
 const writeStream = fs.createWriteStream(txtFilePath, 'utf8')
 
 const handleError = (error) => {
+    console.error(error.message)
     readStream.destroy()
     csv().destroy()
-    console.error(error.message)
+    writeStream.end()
 }
 
 readStream
@@ -23,12 +24,12 @@ readStream
     }))
     .on('error', (error) => handleError(error))
     .subscribe((json) => {
-        for(const [key] of Object.entries(json)){
+        Object.entries(json).forEach(([key]) => {
             const oldKey = key
             const newKey = oldKey.toLowerCase()
             json[newKey] = json[oldKey]
             delete json[oldKey]
-        }
+        })
     })
     .pipe(writeStream)
     .on('error', (error) => handleError(error))
