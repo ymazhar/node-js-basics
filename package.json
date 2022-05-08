@@ -1,0 +1,30 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "BASICS. NODEJS FUNDAMENTAL THEORY",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "task1": "nodemon ./task1.js",
+    "task2": "nodemon ./task2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymazhar/node-js-basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ymazhar/node-js-basics/issues"
+  },
+  "homepage": "https://github.com/ymazhar/node-js-basics#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "csvtojson": "^2.0.10",
+    "lodash": "^4.17.21",
+    "is-utf8": "^0.2.1",
+    "strip-bom": "^2.0.0"
+  },
+  "devDependencies": {}
+}
