@@ -12,12 +12,6 @@ const handleError = (error) => {
     console.error(error.message)
 }
 
-const lowercaseKeys = obj =>
-    Object.keys(obj).reduce((acc, key) => {
-        acc[key.toLowerCase()] = obj[key];
-        return acc;
-    }, {});
-
 readStream
     .on('error', (error) => handleError(error))
     .pipe(csv({
